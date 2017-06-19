@@ -1,7 +1,0 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  align-items: left;
-  justify-content: space-between;
-  box-sizing: border-box;
-} 
