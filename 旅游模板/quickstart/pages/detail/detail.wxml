@@ -1,0 +1,101 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}" >
+  	<block wx:for="{{product.imgpath}}">
+    	<swiper-item>
+      		<image src="{{item}}" class="slide-image"/>
+    	</swiper-item>
+  	</block>
+</swiper>
+
+
+<view class="login">
+    <view  class="subb" style="{{product.price == 0 ? 'display:none' : ''}}">
+        <view class="one">门票</view><view class="two">{{product.price}}元</view>
+    </view>
+    <view class="subb">
+        <view class="one">地址</view>
+       	<view class="two">
+            <form bindsubmit="openLocation">
+                <view class="weui-cells weui-cells_after-title">
+                  	<view class="weui-cell weui-cell_input"  style="display:none">
+	                    <view class="weui-cell__hd">
+	                      <view class="weui-label">经度</view>
+	                    </view>
+	                    <view class="weui-cell__bd">
+	                      <input class="weui-input" type="text" disabled="{{true}}"  value="{{product.primarylng}}" name="longitude"></input>
+	                    </view>
+                  	</view>
+                  	<view class="weui-cell weui-cell_input" style="display:none">
+	                    <view class="weui-cell__hd">
+	                      <view class="weui-label">纬度</view>
+	                    </view>
+	                    <view class="weui-cell__bd">
+	                      <input class="weui-input" type="text" disabled="{{true}}"  value="{{product.primarylat}}" name="latitude"></input>
+	                    </view>
+                  	</view>
+                  	<view class="weui-cell weui-cell_input">
+	                    <view class="weui-cell__hd"  style="display:none">
+	                      <view class="weui-label">位置名称</view>
+	                    </view>
+	                    <view class="weui-cell__bd address">
+	                      <input class="weui-input" type="text" disabled="{{true}}"  value="{{product.address}}" name="name"></input>
+	                    </view>
+                  	</view>
+                  
+                </view>
+                <view class="btn-area">
+                  <button class="botton" type="primary" formType="submit">导航</button>
+                </view>
+            </form>
+    	</view>
+    </view>
+    <view class="phone subb" style="display:{{product.linktel != '' ? '' : 'none'}}">
+        <view class="one">电话</view><view class="two">{{product.linktel}}</view><button class="botton" type="primary" bindtap="call">拨打</button>
+    </view>
+</view>
+
+<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll">
+	<block wx:for="{{showList}}">
+	    <navigator url="/pages/subdetail/subdetail?id={{item.id}}">
+	        <view class="sub">
+		        <view><image src="{{item.coverimg}}"></image></view>
+		        <view>{{item.name}}</view>
+	        </view>
+	    </navigator>
+	</block>
+</scroll-view>
+
+
+<view class="msg">
+  	<view class="top">简介</view>
+  	<view class="mid {{state2==0 ? 'down':'up'}}">{{product.brief}}</view>
+  	<view class="bn"><image src="../../images/more.png"></image></view>
+  	<view class="botton1" data-subeq="2" bindtap="down"><image src="{{img2==0 ? '../../images/down1.png':'../../images/up1.png'}}"></image></view>
+</view>
+
+
+<view class="comment">
+  	<view class="top">游客评论</view>
+  	<block wx:for="{{reviewList}}">
+	  	<view class="bn">
+		    <view class="lt"><image src="{{item.headimgurl}}"></image></view>
+		    <view class="rt">
+		      	<view class="subtop">
+		        	<view class="zuo">{{item.nickname}}</view><view class="you">{{item.createtime}}</view>
+		      	</view>
+		      	<view class="subbn">{{item.content}}</view>
+		    </view>
+	  	</view>
+  	</block>
+  	<view class="bn" style="{{zanwu == 0 ? 'display:none' : ''}}">
+    	<view class="no">无更多游客点评</view>
+  	</view>
+</view>
+
+<view class="dianping">
+  	<view class="lt"><image src="{{headimgurl}}"></image></view><view class="mid"><input type="text" placeholder="点评一下" placeholder-style="font-size:30rpx;color:#4c4c4c;" bindinput="content"/></view><view class="rt" bindtap="review">点评</view>
+</view>
+
+      
+
+
+

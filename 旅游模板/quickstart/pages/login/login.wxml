@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<view class="bg"><image src="{{img}}"></image></view>
+<view class="logo">
+    <image src="../../images/logo.png"></image>
+</view>
+<view class="login">
+    <view>
+        <view><image src="../../images/login1.png"></image><input placeholder-style="color:#fff" placeholder="请输入您的手机号"  bindchange="bindChange1"/></view>
+   
+        <view hidden="{{selected ? true : false}}" bindtap="countdown">{{second}}s后重新获取</view>
+        <view hidden="{{selected1 ? true : false}}"  bindtap="getcode" >获取验证码</view>       
+        
+    </view>
+    <view>
+        <view><image src="../../images/login2.png"></image><input placeholder-style="color:#fff" placeholder="请输入验证码"  bindchange="bindChange2"/></view>
+    </view>
+</view>
+
+<view class="footer1" bindtap="bind">登录</view>

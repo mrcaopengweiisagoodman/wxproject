@@ -1,0 +1,89 @@
+/* pages/login/login.wxss */
+
+page{
+   font-family:微软雅黑;
+}
+
+.logo{
+    width: 750rpx;
+    padding: 40rpx;
+}
+.logo image{
+    width: 110rpx;
+    height:110rpx;
+    display: inline-block;
+
+}
+.login{
+    width: 100%;
+    margin-top:50%;
+}
+.login image{
+  height: 60rpx;
+  width: 60rpx;
+  float: left;
+  margin-top:15rpx;
+
+}
+.login>view{
+    width:70%;
+    padding: 0 3%;
+    margin: 40rpx auto;
+    overflow: hidden;
+    border: 1px #fff solid;
+    border-radius: 50rpx;
+}
+.login view view{
+    float: left;
+    font-size: 30rpx;
+    line-height: 90rpx;
+     color: #fff;
+}
+.login view input{
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 30rpx;
+    resize: 0;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+.login view view:nth-of-type(1){
+    width: 60%;
+}
+.login view view:nth-of-type(2){
+    width: 40%;
+     text-align: center;
+}
+.login view view:nth-of-type(3){
+    width: 30%;
+    text-align: center;
+    float: right;
+}
+.yuyin{
+    width:90%;
+    margin: 0 auto;
+    font-size: 28rpx;
+    color: #6c7ea3;
+    line-height: 100rpx; 
+}
+.footer1{
+    width:76%;
+    margin:25rpx auto 0;
+    background: #fff;
+    font-size:32rpx;
+    line-height: 90rpx;
+    text-align: center;
+    border-radius: 50rpx;
+    color: #0b72ca;
+
+}
+.vip{
+    width:90%;
+    margin:20rpx auto 0;
+    font-size:28rpx;
+    color: #999;
+    text-align: center;
+}
+

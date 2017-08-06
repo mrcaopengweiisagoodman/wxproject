@@ -1,0 +1,36 @@
+<!--pages/index/detail.wxml-->
+<view class="bg">
+	<image src="{{img}}"></image>
+</view>
+
+<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+	<block wx:for="{{categoryList}}">
+        <view  class="swiper-tab-list {{item.on == 1 ? 'on' : ''}}" bindtap="swichNav" data-value="{{item.id}}">{{item.name}}</view>
+    </block> 
+</scroll-view>
+
+<view class="list">
+	<block wx:for="{{productList}}">
+		<navigator url="/pages/detail/detail?id={{item.id}}">
+	   		<view class="detail">
+	            <view class="lt"><image src="{{item.coverimg}}"></image></view>
+	            <view class="rt">
+		            <view class="top">{{item.name}}</view>
+	              	<view class="mid">
+	              		<image style="{{item.star>=1?'':'display:none'}}" src="../../images/start.png"></image>
+	              		<image style="{{item.star>=2?'':'display:none'}}" src="../../images/start.png"></image>
+                    	<image style="{{item.star>=3?'':'display:none'}}" src="../../images/start.png"></image>
+                    	<image style="{{item.star>=4?'':'display:none'}}" src="../../images/start.png"></image>
+                    	<image style="{{item.star>=5?'':'display:none'}}" src="../../images/start.png"></image>
+	              	</view>
+		            <view class="bn" style="display:{{item.linktel ? block : none}}">{{item.linktel}}</view>
+		            <view class="bn">{{item.address}}</view>
+	              	<view class="money" style="{{item.price == 0 ? 'display:none' : ''}}">
+	                	<view>门票</view>
+	                	<view>￥{{item.price}}</view>
+	              	</view>
+	            </view>
+			</view>
+		</navigator>
+    </block> 
+</view>

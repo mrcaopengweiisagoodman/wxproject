@@ -1,0 +1,109 @@
+page{
+  margin-bottom: 100rpx;
+}
+.logo{
+  position:absolute;
+    width: 670rpx;
+    padding: 40rpx;
+    z-index: 99999;font-size: 30rpx;
+    color:#fff;
+}
+.logo image{
+    width: 110rpx;
+    height:110rpx;
+    margin-right: 15rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top:-10rpx;
+
+}
+.weather{
+  position:absolute;
+    width: 670rpx;
+    padding: 40rpx;
+    z-index: 99999;
+    text-align: right;
+    right: 0rpx;
+    font-size: 30rpx;
+    color:#fff;
+}
+.weather image{
+    width: 100rpx;
+    height:100rpx;
+    margin: -22rpx -20rpx -10rpx 0;
+    display: inline-block;
+
+}
+.quan{
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  }
+.quan swiper-item image{
+  width:100%;
+  height: 100%;
+}
+swiper image{
+  width:100%;
+}
+swiper{
+  position: fixed;
+  width:100%;
+  bottom: 200rpx;
+  height: 460rpx;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+}
+.two{
+  width: 95%;
+  padding: 0 2.5%;
+  height: 460rpx;
+  overflow: hidden
+}
+swiper  .detail{
+  width: 33.33%;
+  float: left;
+  text-align: center
+}
+swiper  .detail .top,swiper  .detail .bn{
+  width: 100%;
+  text-align: center
+}
+swiper  image{
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+}
+.footer2{
+   position: fixed;
+  width:100%;
+  bottom: 0;
+  width: 100%;
+  height: 180rpx;
+  overflow: hidden;
+}
+.footer2 .sub_footer{
+  width: 33.33%;
+  text-align: center;
+   height: 180rpx;
+  float: left;
+  color: #fff;
+  font-size: 32rpx;
+}
+.footer2  navigator:nth-of-type(1) .sub_footer{
+  background: #f89201;
+}
+.footer2  navigator:nth-of-type(2) .sub_footer{
+  background: #67cd19;
+}
+.footer2  .sub_footer{
+  background: #00b6e5;
+}
+.footer2 .sub_footer image{
+  width: 80rpx;
+  height: 80rpx;
+  margin:20rpx 0 5rpx;
+  display: inline-block;
+}

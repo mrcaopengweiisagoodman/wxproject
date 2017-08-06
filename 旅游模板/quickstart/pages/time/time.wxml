@@ -1,0 +1,17 @@
+<!--pages/index/detail.wxml-->
+<scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+   	<block wx:for="{{trimList}}">
+        <view  class="swiper-tab-list {{item.on == 1 ? 'on' : ''}}" bindtap="swichNav" data-value="{{item.id}}">{{item.name}}</view>
+	</block>
+</scroll-view>
+<view class="list">
+  	<view class="msg">
+    	<view class="height"></view>
+    	<block wx:for="{{imgpath}}">
+        	<image style="width: {{imagewidth}}px; height: {{imageheight}}px;" bindload="imageLoad"  src="{{item}}"/>
+		</block>
+  	</view>
+  
+</view>
+
+

@@ -1,0 +1,24 @@
+{
+  "pages":[
+ 		"pages/index/index",
+  		"pages/time/time",
+  		
+  		"pages/detail/detail",
+        "pages/help/help",
+        "pages/weather/weather",
+        "pages/list/list",   
+        "pages/login/login",
+        "pages/subdetail/subdetail"
+        
+        
+
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#002141",
+    "navigationBarTitleText": "张掖自助旅游指南",
+    "navigationBarTextStyle":"white",
+    "backgroundColor":"#f2f2f2"
+  }
+}

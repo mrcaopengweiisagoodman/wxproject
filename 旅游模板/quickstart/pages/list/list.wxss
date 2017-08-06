@@ -1,0 +1,108 @@
+/* pages/index/detail.wxss */
+.swiper-tab-list{  font-size: 30rpx;  
+    display: inline-block;  
+    color: #4a4a4a;  
+      width: 375rpx;  
+      height: 100rpx;
+      line-height: 100rpx;
+      background: #fff; 
+          text-align: center; 
+}  
+.on{ color: #177ee6;  
+    border-bottom: 5rpx solid #177ee6;}  
+  
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }  
+.swiper-box view{  
+    text-align: center;  
+}  
+swiper{
+  height: 105rpx;
+}
+.list .detail{
+ position: relative;
+  width: 90%;
+  margin:15rpx 2% 0;
+  padding: 20rpx 3%;
+  overflow: hidden;
+  border-bottom: 2rpx #f2f2f2 solid;
+  background: #fff;
+  border-radius: 10rpx;
+}
+.list .detail .lt{
+  width:32%;
+  float: left;
+}
+.list .detail .lt image{
+  width:200rpx;
+  height: 160rpx;
+  border-radius: 5rpx;
+ 
+}
+.list .detail .rt{
+  width:65%;
+  float: left;
+}
+.list .detail .rt .top{
+  font-size: 32rpx;
+  color: #4c4c4c;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow:hidden;
+    text-overflow:ellipsis;
+    text-overflow: -o-ellipsis-lastline;
+    display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;
+  
+}
+.list .detail .rt .mid{
+  font-size: 24rpx;
+  color: #999;
+  margin: 8rpx 0 12rpx;
+}
+.list .detail .rt .mid image{
+  height: 30rpx;
+  width: 30rpx;
+}
+.list .detail .rt .bn{
+  font-size: 26rpx;
+  color: #808080;
+  margin-top: 1rpx;
+  height: 34rpx;
+      white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+text-overflow: -o-ellipsis-lastline;
+  
+}
+.money{
+  width: 130rpx;
+  top:65rpx;
+  position: absolute;
+  font-size: 26rpx;
+  right: 10rpx;
+   color: #808080;
+   text-align: center;
+   line-height: 40rpx;
+}
+.money view:nth-child(2){
+  color: #ffaa00;
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.page-section-spacing{
+  margin-top: 60rpx;
+}
+.page-section-spacing view{
+  width:33.33%;
+  flaot:left;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 100%;
+  height: 300rpx;
+}

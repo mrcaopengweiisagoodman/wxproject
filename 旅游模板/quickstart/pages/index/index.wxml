@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="logo">
+    <image src="../../images/logo.png"></image>张掖旅游
+</view>
+<navigator url="/pages/weather/weather?title=weather">
+	<view class="weather">
+    	<image src="../../images/tianqi.png"></image>
+      <view>天气</view>
+	</view>
+</navigator>
+<!--全屏轮播-->
+<swiper class="quan" indicator-dots="{{quan_indicatorDots}}" autoplay="{{quan_autoplay}}" interval="{{quan_interval}}" duration="{{quan_duration}}" circular="{{quan_circular}}">
+  	<block wx:for="{{imgUrls}}">
+    	<swiper-item>
+      		<image src="{{item}}" class="slide-image" width="355" height="150"/>
+    	</swiper-item>
+  	</block>
+</swiper>
+
+<!--轮播-->
+<swiper class="two" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{categoryList}}">
+    	<swiper-item>
+    		<block wx:for="{{item}}" wx:for-item="cell">
+    			<navigator url="/pages/list/list?id={{cell.id}}">
+		        	<view class="detail">
+		          		<view class="top"><image src="{{cell.coverimg}}"></image></view>
+		          		<view class="bn">{{cell.name}}</view>
+		        	</view>
+		        </navigator>
+	        </block>
+    	</swiper-item>
+    </block>
+</swiper>
+
+<view class="footer2" bindtap="islogin">
+  	<navigator url="/pages/time/time">
+  		<view class="sub_footer">
+  			<image src="../../images/footer1.png"></image>
+  			<view>出行时刻表</view>
+  		</view>
+  	</navigator>
+  	
+  	<navigator url="/pages/help/help">
+  		<view class="sub_footer">
+  			<image src="../../images/footer2.png"></image>
+  			<view>咨询帮助</view>
+  		</view>
+  	</navigator>
+  	
+  	
+	<view class="sub_footer" bindtap="linktel">
+		<image src="../../images/footer3.png"></image>
+		<view>联系我们</view>
+	</view>
+  	
+</view>
+  
+

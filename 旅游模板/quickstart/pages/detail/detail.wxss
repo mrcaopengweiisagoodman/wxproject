@@ -1,0 +1,272 @@
+/* pages/detail/detail.wxss */
+page{
+  background: #f2f2f2;
+  margin-bottom: 100rpx;
+}
+swiper{width: 100%;
+  height:400rpx;}
+swiper image{
+  width: 100%;
+  height:400rpx;
+  }
+.login{
+    width: 100%;
+    border-top:1px #f2f2f2 solid;
+    border-bottom:1px #f2f2f2 solid;
+    background: #fff;
+}
+.login .subb{
+    width:95%;
+    margin: 0 0 0 5%;
+    height: 100rpx;
+    border-bottom:1px #f2f2f2 solid;
+
+}
+.login view .one{
+    float: left;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    color: #4c4c4c;
+}
+.login view .two{
+    float: left;
+    font-size: 32rpx;
+    line-height: 100rpx;
+    color: #4c4c4c;
+}
+.login view input{
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    resize: 0;
+    border: 0;
+    outline: 0;
+    color: #4c4c4c;
+    background: #fff;
+}
+.login view .one{
+    width: 15%;
+}
+.login view .two{
+    width: 85%;
+      position: relative;
+}
+.login view .address{
+    width: 70%;
+    display:block;
+    white-space:nowrap; 
+	overflow:hidden; 
+	text-overflow:ellipsis;
+text-overflow: -o-ellipsis-lastline;
+}
+
+.botton{
+  position: absolute;
+  right: 10rpx;
+  top:25rpx;
+  height: 50rpx;
+  padding: 0 12rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  background: #fff !important;
+  color: #177ee5 !important;
+  border: 1px #177ee5 solid;
+  border-radius: 12rpx
+}
+botton::after{
+  border: 0 !important;
+}
+
+.weui-input{
+  color: #4c4c4c !important;
+}
+.phone{
+  position: relative;
+}
+.scroll-view_H{
+   width: 96% !important;
+  padding: 0 2%;
+}
+navigator {
+  width: 28% !important;
+  margin: 0 2.65%;
+  padding: 30rpx 0;
+    height: 240rpx;
+  display:inline-block;
+  text-align: center;
+  font-size: 30rpx;
+  color: #4c4c4c;
+  line-height: 70rpx;}
+.scroll-view_H .sub{
+  width: 100%;
+  
+}
+.scroll-view_H .sub image{
+  width:100%;
+  height: 160rpx;
+  border-radius: 10rpx;
+}
+.msg{
+  position: relative;
+  width: 90%;
+  padding: 0 5%;
+  background: #fff;
+}
+.msg .top{
+  font-size:34rpx;
+  color: #4c4c4c;
+  padding-top: 20rpx; 
+}
+.msg .mid{
+  width: 95%;
+  font-size:28rpx;
+  color: #999; 
+  padding-top: 20rpx;
+  line-height: 40rpx;
+}
+.msg .bn{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px #f8f8f8 solid;
+}
+.msg .bn image{
+  height:30rpx;
+  width: 60rpx;
+  display: inline-block;
+  padding: 15rpx;
+}
+.up{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    text-overflow: -o-ellipsis-lastline;
+    display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;
+}
+.down{
+  
+}
+.botton1{
+  position: absolute;
+  right: 0rpx;
+  top:20rpx;
+  height: 80rpx;
+  width: 80rpx;
+}
+.botton1 image{
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: -20rpx;
+}
+.comment{
+  position: relative;
+  width: 90%;
+  margin: 0 5%;
+}
+.comment .top{
+  font-size:34rpx;
+  color: #4c4c4c;
+  margin: 20rpx 0; 
+}
+.comment .mid{
+  width: 95%;
+  font-size:28rpx;
+  color: #999; 
+  margin-top: 20rpx;
+  line-height: 40rpx;
+}
+.comment .bn{
+  width: 100%;
+  padding: 20rpx 0;
+  border-bottom: 1px #eaeaea solid;
+  overflow: hidden;
+  color: #4c4c4c;
+}
+.comment .bn .lt{
+  width: 15%;
+  float: left;
+}
+.comment .bn .rt{
+  width: 82%;
+  float: right;
+}
+.comment .bn .lt image{
+  height:70rpx;
+  width: 70rpx;
+  display: inline-block;
+  border-radius: 50%;
+  margin-top: 20rpx;
+}
+.comment .bn .rt .subtop{
+  overflow: hidden;
+  font-size: 30rpx;
+}
+.comment .bn .rt .subtop .zuo{
+  float: left;
+}
+.comment .bn .rt .subtop .you{
+  float: right;
+}
+.comment .bn .rt .subbn{
+  color: #999;font-size: 28rpx;
+  line-height: 40rpx;
+    margin-top: 15rpx;
+}
+
+.dianping{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  background: #333333;
+}
+.dianping .lt{
+  width: 16%;
+  float: left;
+  text-align: center;
+}
+.dianping .lt image{
+  width: 70rpx;
+  height: 70rpx;
+  margin: 15rpx 0;
+  border-radius: 50%;
+  display: inline-block;
+}
+.dianping .mid{
+  width: 60%;
+  float: left;
+}
+.dianping .mid input{
+  width: 88%;
+  padding: 0 3%;
+  line-height: 60rpx;
+  height: 60rpx;
+  margin:20rpx 0;
+  background: #f2f2f2;
+  color: #4c4c4c;
+  border-radius: 5px;
+}
+.dianping .rt{
+  width: 24%;
+  text-align: center;
+  background: #1a77d4;
+  color: #fff;
+  float: left;
+}
+.no{
+  text-align: center;
+  font-size: 30rpx;
+  color: #999;
+  padding: 30rpx 0;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 100%;
+  height: 300rpx;
+}

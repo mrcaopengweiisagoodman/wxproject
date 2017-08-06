@@ -1,0 +1,89 @@
+/* pages/index/detail.wxss */
+page{
+  background: #fff;
+}
+swiper-item{
+  background: #fff;
+}
+.swiper-tab-list{  font-size: 30rpx;  
+    display: inline-block;  
+    color: #4a4a4a;  
+      width: 187.5rpx;  
+      height: 100rpx;
+      line-height: 100rpx;
+      background: #fff; 
+          text-align: center; 
+}  
+.on{ color: #177ee6;  
+    border-bottom: 5rpx solid #177ee6;}  
+  
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden; }  
+.swiper-box view{  
+    text-align: center;  
+}  
+swiper{
+  height: 105rpx;
+}
+.list{
+  background: #f2f2f2;}
+
+
+.height{
+  height: 15rpx;
+  background: #f2f2f2;
+}
+.msg{
+  position: relative;
+  width: 100%;
+  background: #fff;
+}
+.msg .top,.msg .mid,.msg .bn,.msg .height,.msg .bn1{
+  width: 90%;
+  padding: 0 5%;
+}
+.msg .top{
+  font-size:34rpx;
+  color: #4c4c4c;
+  padding-top: 20rpx; 
+}
+.msg .mid{
+  margin: 0 auto;
+  font-size:28rpx;
+  color: #999; 
+  padding: 20rpx 5% 0 5%;
+  line-height: 40rpx;
+}
+.msg .submid{
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.msg .bn{
+  padding: 15rpx 5%;
+  line-height: 40rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+.msg .mid image{
+  width:100%;
+  height: 400rpx;
+  display: inline-block;
+  border-radius: 0;
+}
+.msg .bn1{
+  width: 100%;
+  line-height: 40rpx;
+  color: #4c4c4c;
+  font-size: 28rpx;
+}
+
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  width: 100%;
+  height: 300rpx;
+}
