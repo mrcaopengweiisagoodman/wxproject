@@ -1,0 +1,115 @@
+<!--signin.wxml-->
+<navigator url="" class="banner">
+	<image src="../../images/banner.png"></image>
+</navigator>
+<form action="#" class="form">
+	<view>
+		<view>
+			<view class="inp_list">
+				<image src="../../images/name.png"></image>
+				<text class="font-15">您的称呼：</text>
+				<input type="text" class="color_o" />
+			</view>
+		</view>
+		<view>
+			<view class="inp_list">
+				<image src="../../images/tel.png" class="tel"></image>
+				<text class="font-15">手机号码：</text>
+				<input type="text" placeholder="请输入您的手机号" />
+			</view>
+		</view>
+		<view class="code">
+			<view class="inp_list tel_list">
+				<image src="../../images/d.png"></image>
+				<text class="font-15">验证码：</text>
+				<input type="text" placeholder="请输入验证码" />
+			</view>
+			<view class="bg_o">获取验证码</view>
+		</view>
+		<view class="place" bindtap="timePicker">
+			<view class="inp_list">
+				<image src="../../images/time.png" />
+				<text class="font-15">预约时间：</text>
+				<view class="time font-15 color_h" style="{{color_o}}">{{time_str}}</view>
+			</view>
+			<image src="../../images/to.png" class="cho" />
+		</view>
+		<view class="place" bindtap="addrPicker" data-arr="{{index}}">
+			<view class="inp_list">
+				<image src="../../images/addr.png"></image>
+				<text class="font-15">物流地址：</text>
+				<view id="place" class="m1-hidden select-area color_h font-15" style="{{color_hei}}">{{addr_str}}</view>
+			</view>
+			<image src="../../images/to.png" class="cho" />
+		</view>
+	</view>
+	<view class="bian"></view>
+	<textarea placeholder="详情描述（不超过50字）"></textarea>
+	<view class="bian"></view>
+	<!-- 上传图片 -->
+	<view class="pic_box">
+		
+	</view>
+</form>
+<!-- 时间选择 -->
+<view class="addr_layer" wx:if="{{time}}" bindtap="timeS">
+	<view>
+		<view class="btns">
+			<view bindtap="timeH">取消</view>
+			<view bindtap="timeS">确定</view>
+		</view>
+		<picker-view value="{{time_idx}}" indicator-class="chose" mask-class="chose_layer" bindchange="choseTime">
+			<picker-view-column>
+				<block wx:for="{{y_arr}}" wx:for-item="y" wx:key="">
+					<view>{{y}}</view>
+				</block>
+			</picker-view-column>
+			<picker-view-column>
+				<block wx:for="{{mon_arr}}" wx:for-item="mon" wx:key="">
+					<view>{{mon}}</view>
+				</block>
+			</picker-view-column>
+			<picker-view-column>
+				<block wx:for="{{day_arr}}" wx:for-item="day" wx:key="">
+					<view>{{day}}</view>
+				</block>
+			</picker-view-column>
+			<picker-view-column>
+				<block wx:for="{{h_arr}}" wx:for-item="h" wx:key="">
+					<view>{{h}}</view>
+				</block>
+			</picker-view-column>
+			<picker-view-column>
+				<block wx:for="{{minu_arr}}" wx:for-item="minu" wx:key="">
+					<view>{{minu}}</view>
+				</block>
+			</picker-view-column>
+		</picker-view>
+	</view>
+</view>
+<!-- 地址选择 -->
+<view class="addr_layer" wx:if="{{addr}}">
+	<view>
+		<view class="btns">
+			<view bindtap="addrPickerHide">取消</view>
+			<view bindtap="addrPickerS" data-arr="{{index}}">确定</view>
+		</view>
+		<picker-view value="{{index}}" indicator-class="chose" mask-class="chose_layer" bindchange="choseAddr">
+			<picker-view-column>
+				<block wx:for="{{p}}" wx:key="">
+					<view>{{item}}</view>
+				</block>
+			</picker-view-column>
+			<picker-view-column>
+				<block wx:for="{{c[index[0]]}}" wx:for-item="cItem" wx:key="" wx:key="">
+					<view>{{cItem}}</view>
+				</block>
+			</picker-view-column>
+			<picker-view-column>
+				<block wx:for="{{x[index[0]][index[1]]}}" wx:for-item="xItem" wx:key="">
+					<view>{{xItem}}</view>
+				</block>
+			</picker-view-column>
+		</picker-view>
+	</view>
+</view>

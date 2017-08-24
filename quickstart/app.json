@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/add/add"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "金鼎",
+    "navigationBarTextStyle":"black"
+  }
+}

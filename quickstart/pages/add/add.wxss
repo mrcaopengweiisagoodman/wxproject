@@ -1,0 +1,144 @@
+/*signin.wxss*/
+page{
+	height: 100%;
+	padding-bottom: 132rpx;
+	background: #f7f7f7;
+}
+.banner image{width: 100%;}
+.form{
+	margin: 24rpx 0;
+	background: #fff;
+}
+/*.form view view,*/
+.inp_list,
+.mine a{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 3%;
+	border-bottom: 1px solid #e6e6e6;
+	color: #000;
+
+	width: 94%;
+	background: #fff;
+	justify-content: flex-start;
+
+}
+.inp_list{
+	/*display: flex;*/
+	align-items: center;
+	/*width: 94%;*/
+	height: 108rpx;
+}
+.inp_list image{
+	width: 48rpx;
+	height: 48rpx;
+	margin-right: 24rpx;
+}
+.inp_list .tel{
+	width: 30rpx;
+	margin-left: 6rpx;
+}
+.inp_list input{
+	/*width: 50%;*/
+	height: 100%;
+	font-size: 32rpx;
+}
+#tel_list{width: 70%}
+.tel_list input{width: 50%;}
+.code,
+.place{
+	display: flex;
+	align-items: center;
+	width: 96%;
+	background: #fff;
+}
+view.place{
+	width: 97%;
+	padding-right: 3%;
+	border-bottom: 1px solid #e6e6e6;
+}
+view.place .inp_list{border: none;}
+.code .bg_o{
+	width: 30%;
+	height: 108rpx;
+	line-height: 108rpx;
+	text-align: center;
+	font-size: 28rpx;
+	color: #fff;
+	margin-right: -4%
+}
+#place{
+	width: 65%;
+}
+.code input{width: 63%;}
+.cho{
+	width: 18rpx;
+	height: 30rpx;
+	/*margin-top: 30rpx;*/
+}
+textarea{
+	width: 92%;
+    height: 150rpx;
+   	padding: 24rpx 4%;
+   	font-size: 28rpx;
+	background: #fff;
+	border: none;
+}
+.btn{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 120rpx;
+	line-height: 120rpx;
+	text-align: center;
+	font-size: 32rpx;
+	color: #fff;
+}
+/*底部滚动器*/
+.chose{
+	border-top: 1px solid #ff6600;
+	border-bottom: 1px solid #ff6600;
+	color: #4d4d4d;
+}
+picker-view-column{
+	height: 400rpx;
+	text-align: center;
+}
+picker-view-column view{
+	height: 72rpx;
+	line-height: 72rpx;
+}
+.addr_layer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 200;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.5);	
+}
+.chose{color: #ff6600;}
+.btns{
+	display: flex;
+	justify-content: space-between;
+	/*align-items: center;*/
+	width: 94%;
+	padding: 0 3%;
+	color: #ff6600;
+	font-size: 30rpx;
+	background: #f2f2f2;
+}
+.btns view{
+	height: 96rpx;
+	line-height: 96rpx;
+	padding: 0 10rpx;
+}
+.addr_layer>view{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #fff;
+}
+

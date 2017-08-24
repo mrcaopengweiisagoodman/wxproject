@@ -1,0 +1,52 @@
+/**app.wxss**/
+
+.font-10{font-size: 20rpx;}
+.font-12{font-size: 24rpx;}
+.font-13{font-size: 26rpx;}
+.font-14{font-size: 28rpx;}
+.font-15{font-size: 30rpx;}
+.font-16{font-size: 32rpx;}
+.font-17{font-size: 34rpx;}
+.font-18{font-size: 36rpx;}
+
+.color_o{color: #ff6600;}
+.color_h{color: #9fa0a0;}
+.color_hei{color: #333;}
+.color_b{color: #4a7ed3;}
+.color_sh{color: #7a7a7a;}
+.color_00{color: #000;}
+.color_ff{color: #fff;}
+.color_j{color: #e4aa4b;}
+
+.bg_o{background: #ff6600;}
+.bg_h{background: #969797;}
+body .bg_f{background: #fff;}
+.bg_hei{background: #333333;}
+.bg_g{background: #25be82;}
+
+.overf{overflow: hidden;}
+
+input{
+    border:none;
+    background: #fff;
+}
+.m1-hidden{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.m2-hidden{
+    line-height: 42rpx;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap:break-word
+}
+.bian{
+    width: 100%;
+    height: 24rpx;
+    background: #f7f7f7;
+}
