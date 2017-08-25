@@ -1,6 +1,6 @@
 //signin.js
-var week,addr_str;
-var util = require('../../utils/util.js');
+let week,addr_str;
+let util = require('../../utils/util.js');
 Page({
     data:{
         // 时间选择
@@ -106,8 +106,8 @@ Page({
         ]
     },
     num: function (a,arr) {
-        var str;
-        for (var i = 0;i < a;i++) {
+        let str;
+        for (let i = 0;i < a;i++) {
             i < 9 ? str = '0' + (i + 1)
                    :  str = String(i+1);
             arr.push(str);
@@ -133,7 +133,7 @@ Page({
 
     },
     chosMon: function (j) {
-        var self = this,
+        let self = this,
             str,
             y_arr = [],
             mon_arr = [],
@@ -142,17 +142,17 @@ Page({
             minu_arr = [],
             date = new Date();
 
-        for (var i = 2017;i <= 2018;i++) {
+        for (let i = 2017;i <= 2018;i++) {
             y_arr.push(i);
         };
         self.num(12,mon_arr);
-        for (var i = 0;i < 24;i++) {
+        for (let i = 0;i < 24;i++) {
             i < 10 ? str = '0' + i
                    : str = String(i);
             h_arr.push(str);
         };
         // 分
-        for (var i = 0;i <= 60;i++) {
+        for (let i = 0;i <= 60;i++) {
             i < 10 ? str = '0' + i
                    : str = String(i);
             minu_arr.push(str);
@@ -179,23 +179,10 @@ Page({
         });
     },
     onLoad: function () {
-        var self = this;
-        // wx.getSavedFileList({
-        //     success: function(res) {
-        //         if (res.fileList.length > 0){
-        //           wx.removeSavedFile({
-        //             filePath: res.fileList[0].filePath,
-        //             complete: function(res) {
-        //               console.log('hhhhhhhhhhhhhhieeeeeeeefhddvnvnknfkj')
-        //             }
-        //           })
-        //         }
-        //       }
-        // })
-       
+  
     },
     addrCommon: function () {
-        var self = this,
+        let self = this,
             addr_arr = self.data.index;
             addr_str = self.data.p[addr_arr[0]] + '-' +
                        self.data.c[addr_arr[0]][addr_arr[1]] + '-' +
@@ -203,7 +190,7 @@ Page({
     },
     // 弹出
     addrPicker: function (e) {
-        var self = this;
+        let self = this;
             self.addrCommon();
         self.setData({
             addr: true,
@@ -211,7 +198,7 @@ Page({
     },
     // 取消
     addrPickerHide: function () {
-        var self = this;
+        let self = this;
         self.setData({
             addr: false,
             color_hei: 'color:#9fa0a0',
@@ -221,7 +208,7 @@ Page({
     },
     // 确定
     addrPickerS: function () {
-        var self = this;
+        let self = this;
         self.addrCommon();
         self.setData({
             addr: false,
@@ -231,7 +218,7 @@ Page({
     },
     // 滚动时
     choseAddr: function (e) {
-        var self = this,
+        let self = this,
             addr_arr = self.data.index;
         self.addrCommon();
         self.setData({
@@ -240,11 +227,11 @@ Page({
         })
     },
     choseTime: function (e) {
-        var self = this,
+        let self = this,
             idx = e.detail.value,
             endstr = '';
         self.chosMon(e.detail.value[1]);
-        var date2 = new Date(`
+        let date2 = new Date(`
             ${self.data.y_arr[idx[0]]}/ 
             ${self.data.mon_arr[idx[1]]}/ 
             ${self.data.day_arr[idx[2]]}
@@ -264,10 +251,10 @@ Page({
     },
     timePicker: function () {
         // 弹出之后初始化结果框
-        var self = this;
+        let self = this;
         self.chosMon(self.data.time_idx[1]);
         console.log(self.data.time_idx)
-        var idx = self.data.time_idx,
+        let idx = self.data.time_idx,
             flag = [0,0,0,0,0],
             date3 = new Date(`
                             ${self.data.y_arr[idx[0]]}/ 
@@ -287,7 +274,7 @@ Page({
         })
     },
     timeH: function () {
-        var self = this;
+        let self = this;
         self.setData({
             time: false,
             time_str: '请选择选择预约时间',
@@ -299,37 +286,6 @@ Page({
         var self = this;
         self.setData({
             time: false
-        })
-    },
-    imgUpload: function () {
-        var self = this;
-
-        wx.chooseImage({
-            count: 4,
-            sizeType: 'original',//原图
-            // sizeType: 'compressed',//压缩图
-            success: function (res) {
-
-                        console.log(res)
-                wx.saveFile({
-                    tempFilePath: res.tempFilePaths[0]
-                })
-                wx.getSavedFileList({
-                    success: function(res){
-
-                        console.log(res.fileList)
-                        self.setData({
-                            img_src: res.fileList[0].filePath
-                        })
-                    },
-                    fail: function (){
-                        console.log('f')
-                    }
-                })
-            },
-            fail: function (res) {
-                console.log(res)
-            }
         })
     },
 
