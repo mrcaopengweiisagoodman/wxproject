@@ -1,0 +1,11 @@
+<!--pages/mine/mine.wxml-->
+
+<button bind:tap="login">登录</button>
+
+
+
+<!-- <image src="{{userInfo.avatarUrl}}"></image>
+<view>{{userInfo.nickName}}</view>
+
+<view>{{userInfo.province}}</view>
+<view>{{userInfo.city}}</view> -->

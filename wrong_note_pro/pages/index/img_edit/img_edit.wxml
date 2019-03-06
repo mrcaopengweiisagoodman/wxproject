@@ -1,0 +1,39 @@
+<view id="imgEdit">
+	<block>
+		<view>图片预览</view>
+		<!-- <image mode="widthFix" src="{{imageSrc}}"></image> -->
+		<view>下面的是把图片画到canvas上</view>
+		<!--   
+			动态记录宽、高
+		-->
+		<view id='canvasInBox'>
+			<canvas canvas-id="canvasIn" class="turn_{{turnCount}}" 
+				style='width: {{imageInfo.width + "px"}};height: {{imageInfo.height + "px"}};'
+				disable-scroll="false" 
+				bindtouchstart="touchStart" 
+				bindtouchend="touchEnd" 
+				bindtouchmove="touchMove"
+			></canvas>
+			<!-- <canvas canvas-id="canvasIn" class="canvas" 
+				disable-scroll="false" 
+				bindtouchstart="touchStart" 
+				bindtouchend="touchEnd" 
+				bindtouchmove="touchMove"
+			></canvas> -->
+		</view>
+	</block>
+	<block>
+	<!-- 	<button bind:tap='setLineWidth' data-param='5'>细条</button>
+		<button bind:tap='setLineWidth' data-param='10'>中条</button>
+		<button bind:tap='setLineWidth' data-param='15'>粗条</button>
+		<button bind:tap='colorSelect' data-param='#22afaf'>浅蓝</button>
+		<button bind:tap='colorSelect' data-param='#da208e'>浅紫</button>
+		<button bind:tap='colorSelect' data-param='#d6da20'>橘黄</button> 
+		
+		<button bind:tap='clearCanvas'>橡皮擦</button>
+		<button bind:tap='recoverCanvas'>回退</button>-->
+		<button bind:tap='turnCanvas'>旋转</button>
+		
+		<button bind:tap='eidtedImg'>保存已经编辑的图片</button>
+	</block>
+</view>
