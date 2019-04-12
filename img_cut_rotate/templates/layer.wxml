@@ -1,0 +1,10 @@
+<!-- 
+    遮罩层
+    使用：
+        <view capture-catch:tap='layerClick'>
+            <template is='layer'></template>
+        </view>
+ -->
+<template name='layer'>
+    <view id='layerBox' class='layerBox'></view>
+</template>

@@ -1,0 +1,300 @@
+#imgEdit{
+	position: relative;
+	height: 100%;
+	background: #333333;
+}
+#canvasInBox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 67%;
+}
+.imgEdit .imgShowBox{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 90%;
+	/* height: 820rpx; */
+	height: 67vh;
+	margin: 0 auto;
+}
+/* 底部提示：再拍？继续？ */
+.imgEdit .nextOrNo{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #FFFFFF;
+}
+.imgEdit .nextOrNo .h2{
+	height: 90rpx;
+	line-height: 120rpx;
+	font-size: 28rpx;
+	text-align: center;
+}
+.imgEdit .nextOrNo image{
+	display: block;
+	width: 132rpx;
+	height: 132rpx;
+	margin: 0 auto 50rpx;
+}
+.imgEdit .nextOrNo .goEdit,
+.imgEdit .saveBtn{
+	width: 90%;
+	height: 88rpx;
+	line-height: 88rpx;
+	margin: 0 auto 14rpx;
+	font-size: 32rpx;
+	color: #FFFFFF;
+	text-align: center;
+	background: #FF4A4A;
+	border-radius: 10rpx;
+}
+/* 编辑图片，工具区 */
+.toolBox{
+	width: 100%;
+	height: 375rpx;
+	font-size: 28rpx;
+}
+.toolBox .setLineLists{
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 5%;
+	margin: 40rpx 0 50rpx;
+}
+.toolBox .setLineLists .h2{
+	line-height: 90rpx;
+}
+.toolBox .setLineLists .setLine{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	/* width: 120rpx; */
+	height: 64rpx;
+	padding: 0 15rpx;
+	margin: 0 0rpx 0 30rpx;
+	border: 2rpx solid #E0E0E0;
+	border-radius: 4rpx;
+	box-sizing: border-box;
+}
+.toolBox .setLineLists .setLine .circle{
+	margin-right: 18rpx;
+	border: 2rpx solid #FF4A4A;
+	border-radius: 50%;
+}
+.toolBox .setLineLists .backMove{
+	width: 160rpx;
+	text-align: center;
+}
+/* 保存图片 */
+.saveCanvas.nextOrNo{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: #333333;
+}
+.imgEdit .saveBtn{
+	position: absolute;
+	bottom: 0;
+	left: 5%;
+	width: 90%;
+}
+.imgEdit .rePhoto{
+	position: absolute;
+	top: 30rpx;
+	right: 5%;
+	width: 150rpx;
+	height: 64rpx;
+	line-height: 64rpx;
+	font-size: 26rpx;
+	text-align: center;
+	background: #FFFFFF;
+	border-radius: 32rpx;
+	z-index: 100;
+}
+/* 正背面展示 */
+.allImageShow{
+	height: 100vh;
+}
+	/* 滑块 */
+.allImageShow .box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 61vh;
+	font-size: 28rpx;
+}
+/* .allImageShow .swiperItem{
+	display: flex;
+	justify-content: center;
+	height: 61vh;
+	font-size: 28rpx;
+} */
+.allImageShow .swiperItem .tagManage{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 92%;
+	height: 38vh;
+	padding: 0 4%;
+	background: #FFFFFF;
+	z-index: 1000;
+}
+.allImageShow .swiperItem .tagManage image{
+	width: 28rpx;
+	height: 28rpx;
+}
+.allImageShow .swiperItem .tagManage .tagsBox{
+	display: flex;
+	flex-wrap: wrap;
+}
+.allImageShow .swiperItem .tagStyle{
+	height: 68rpx;
+	line-height: 68rpx;
+	padding: 0 30rpx;
+	margin: 15rpx 20rpx 0 0;
+	color: #333333;
+	border: 2rpx solid #E0E0E0;
+	border-radius: 34rpx;
+}
+.allImageShow .swiperItem .tagManage .manageTags{
+	color: #E0E0E0;
+}
+	/* 左右切换安妮 */
+.imgEdit .switchLeft,
+.imgEdit .switchRight{
+	position: absolute;
+	top: 33.3%;
+}
+.imgEdit .switchLeft image,
+.imgEdit .switchRight image{
+	width: 60rpx;
+	height: 60rpx;
+}
+.tagManage .h2{text-align: center;}
+.tagManage .subTitle{
+	display: flex;
+	align-items: center;
+}
+.swiperItem .tagManage .tagTitle image{
+	width: 18rpx;
+	height: 24rpx;
+}
+.beizhu{margin: 18rpx 0 80rpx 0;}
+.imgEdit .switchLeft{left: 28rpx;}
+.imgEdit .switchRight{right: 28rpx;}
+.firstImg{
+	position: fixed;
+	top: 30rpx;
+	left: 30rpx;
+	width: 150rpx;
+	height: 200rpx;
+	z-index: 10000;
+}
+.firstImg image{
+	width: 100%;
+	height: 100%;
+}
+/* 画笔选中效果 */
+#imgEdit .redBg{
+	background: #FF4A4A;
+}
+/* 学科选择 */
+.selectSubject{
+	position: absolute;
+	top: 30rpx;
+	right: 30rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100rpx;
+    padding: 0 30rpx;
+	background: #FF4A4A;
+	border-radius: 32rpx;
+	text-align: center;
+}
+.selectSubject cover-view{
+	height: 64rpx;
+	line-height: 64rpx;
+    font-size: 28rpx;
+	color: #FFFFFF;
+}
+.selectSubject cover-image{
+    width: 26rpx;
+    height: 14rpx;
+}
+/* 学科选择弹窗 */
+.subjectBox{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    z-index: 10000000000000;
+}
+.subjectBox .subjectList{
+    height: 108rpx;
+    line-height: 108rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #333333;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.75);
+
+}
+/* 选择颜色 */
+.subjectBox .subjectColor{
+	color: #FF4A4A;
+}
+/* 查看大图 */
+.clickImgBox{
+}
+.clickImg{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background: #333333;
+	z-index: 999999999999;
+}
+.btnBox{
+	position: fixed;
+	bottom: 80rpx;
+	left: 0;
+	display: flex;
+	justify-content: space-around;
+	width: 100vw;
+	z-index: 9999999999999;
+}
+.btnBox image{
+	width: 36rpx;
+	height: 36rpx;
+}
+.btnBox .btnB_{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 15vw;
+}
+.btnBox .font_{
+	line-height: 36rpx;
+	font-size: 28rpx;
+	color: #FFFFFF;
+	margin-top: 20rpx;
+}
+.turn_1{
+	transform: rotate(90deg);
+}
+.turn_2{
+	transform: rotate(180deg);
+}
+.turn_3{
+	transform: rotate(270deg);
+}
+.turn_4{
+	transform: rotate(0deg);
+}

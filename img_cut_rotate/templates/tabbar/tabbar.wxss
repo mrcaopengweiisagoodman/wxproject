@@ -1,0 +1,47 @@
+.tabbarBox{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	background: #FFFFFF;
+	/* 
+	依次为：
+	左、上、下、右
+	 */
+	box-shadow: 2px 0 3px -1px rgba(238, 238, 238, 0), 
+		0 -2px 3px -1px rgba(238, 238, 238, 0.75), 
+		0 2px 3px -1px rgba(238, 238, 238, 0), 
+		2px 0 3px -1px rgba(238, 238, 238, 0); 
+	z-index: 1000000;
+}
+.tabbarBox navigator,
+.tabbarBox .homeTab,
+.tabbarBox .mineTab
+{
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	height: 98rpx;
+	text-align: center;
+}
+.tabbarBox navigator image,
+.tabbarBox .homeTab image,
+.tabbarBox .mineTab image{
+	width: 38rpx;
+	height: 41rpx;
+	margin: 18rpx auto 6rpx;
+}
+.tabbarBox navigator text,
+.tabbarBox .homeTab text,
+.tabbarBox .mineTab text{
+	font-size: 20rpx;
+}
+.activeColor{
+	color: #FF4A4A;
+}
+.defaultColor{
+	color: #8E8E8E;
+}

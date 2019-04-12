@@ -1,0 +1,100 @@
+/* 裁剪插件 */
+@import "/templates/cropper/cropper.wxss";
+/* 相机页面 */
+.cameraBox{
+	width: 100%;
+	height: 100%;
+	background: #333333;
+}
+.cameraBox .camera{
+	position: relative;
+	width: 100%;
+	/* height: 100%; */
+	z-index: 10;
+	position: fixed;
+}
+.cameraBox .takePhotoTop{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 31rpx 40rpx;
+	color: #FFFFFF;
+	font-size: 28rpx;
+	z-index: 100;
+}
+.cameraBox .takePhotoTop .close{
+	width: 30rpx;
+	height: 30rpx;
+}
+.cameraBox .takePhotoTop .selectSubject{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+	width: 100rpx;
+    padding: 0 30rpx;
+	background: #FF4A4A;
+	border-radius: 32rpx;
+	text-align: center;
+}
+.cameraBox .takePhotoTop .selectSubject cover-view{
+	height: 64rpx;
+	line-height: 64rpx;
+    font-size: 28rpx;
+}
+.cameraBox .takePhotoTop .selectSubject cover-image{
+    width: 26rpx;
+    height: 14rpx;
+}
+.cameraBox .takePhotoBtn{
+	position: fixed;
+	left: 0;
+	bottom: 96rpx;
+	width: 100%;
+	z-index: 100;
+}
+.cameraBox .takePhotoImg{
+	width: 134rpx;
+	height: 134rpx;
+	margin: 0 auto;
+}
+.cameraBox .takePhotoShow{
+	z-index: 10000;
+}
+.cameraBox .selectPhotoImgBox{
+	position: fixed;
+	right: 120rpx;
+	bottom: 110rpx;
+	z-index: 100;
+}
+.cameraBox .selectPhotoImg{
+	width: 60rpx;
+	height: 55rpx;
+}
+.cameraBox .takePhotoTip{
+	margin: 32rpx 0 0;
+	font-size: 26rpx;
+	color: #FFFFFF;
+	text-align: center;
+}
+/* 学科选择弹窗 */
+.cameraBox .subjectBox{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #FFFFFF;
+    z-index: 1000;
+}
+.cameraBox .subjectBox .subjectList{
+    height: 108rpx;
+    line-height: 108rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #333333;
+    border-bottom: 1px solid rgba(238, 238, 238, 0.75);
+
+}
+/* 选择颜色 */
+.cameraBox .subjectBox .subjectColor{
+	color: #FF4A4A;
+}

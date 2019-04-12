@@ -1,0 +1,37 @@
+<!-- 引入组件 -->
+<import src="/templates/cropper/cropper.wxml" />
+<view class="cameraBox">
+	<camera
+		wx:if="{{cameraIsShow}}"
+		class="camera"
+		device-position="back"
+		flash="off"
+		binderror="error"
+		style="width: 100%; height: 100%;"
+	>
+		<cover-view class="takePhotoTop">
+			<cover-image class="close" bindtap="toHome" src="../../../images/camera/photo_icon_delete.png"></cover-image>
+			<cover-view class="selectSubject" bindtap="selectSubject">
+				<!-- <cover-view>数学</cover-view> -->
+				<cover-view>{{subjectText}}</cover-view>
+				<cover-image class="jiantou" src='{{jiantouImg}}'></cover-image>
+			</cover-view>
+		</cover-view>
+		<cover-view class="takePhotoBtn">
+			<cover-image bindtap='takePhoto' class="takePhotoImg" src="../../../images/camera/photo_btn_paiz.png">
+			</cover-image>
+			<!-- <cover-view class="takePhotoTip">每次只拍一道题哦！</cover-view> -->
+		</cover-view>
+		<cover-view class="selectPhotoImgBox" data-mode='rectangle' bindtap='selectTap'>
+			<cover-image class="selectPhotoImg" src="../../../images/camera/photo_icon_xiangc.png">		</cover-image>
+			<cover-view class="takePhotoTip" style="margin-top: 10rpx">相册</cover-view>
+		</cover-view>
+        <!-- 学科选择 -->
+        <cover-view class="subjectBox" wx:if="{{subjectIsShow}}">
+            <cover-view class="subjectList {{subjectText =='数学' ? 'subjectColor' : ''}}" bindtap="choiceSubject" data-cnText="MATH" data-subjectText="数学">数学</cover-view>
+            <cover-view class="subjectList {{subjectText =='语文' ? 'subjectColor' : ''}}" bindtap="choiceSubject" data-cnText="CHINESE" data-subjectText="语文">语文</cover-view>
+            <cover-view class="subjectList {{subjectText =='英语' ? 'subjectColor' : ''}}" bindtap="choiceSubject" data-cnText="ENGLISH" data-subjectText="英语">英语</cover-view>
+        </cover-view>
+	</camera>
+    <template class="takePhotoShow" is="cropper" data="{{cropperData:cropperData, cropperMovableItems:cropperMovableItems, cropperChangableData:cropperChangableData,imageAgin: imageAgin}}"></template>     
+</view>

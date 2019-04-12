@@ -1,0 +1,183 @@
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 20rpx 0 0;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.container-mine {
+  width: 85%;
+  margin: 100px auto 0 auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.zan-field {
+  padding: 7px 3px 7px 0;
+}
+
+.weui-btn {
+  position: relative;
+  display: block;
+  margin: 15px auto;
+  padding-left: 14px;
+  padding-right: 14px;
+  box-sizing: border-box;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: 2.55555556;
+  border-radius: 5px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.weui-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 12px;
+  color: #999;
+}
+
+.contact {
+  display: inline-block;
+  margin: 0;
+  padding: 16px 0;
+  line-height: 14px;
+  font-size: 14px;
+  border: none;
+  width: 90%;
+  text-align: left;
+  background: none;
+}
+
+button[class="contact"]::after {
+  border: 0;
+}
+
+/* 发送验证码按钮隐藏，并展示倒数60s提示 */
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.item-img {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.iconfont {
+  font-size: 18px;
+  padding: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.zan-cell {
+  font-size: 14px;
+}
+
+.zan-cell:active {
+  background-color: #ececec;
+}
+
+.wrap {
+  background-color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+}
+
+.wrap .num {
+  text-align: center;
+  color: #ff4a4a;
+}
+
+.info {
+  background-color: #ff4a4a;
+}
+
+/* 遮罩层 */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.5;
+}
+
+/* 弹出层 */
+
+.modalDlg {
+  width: 80%;
+  height: 80%;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrap_Popup {
+  width: 100%;
+}
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 82rpx;
+  background: #ff4a4a;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-around;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  color: #ffcece;
+}
+
+.on {
+  color: #fff;
+  border-bottom: 5rpx solid #fff;
+}
+/* zan-ui样式调整 */
+.zan-panel.top{
+	margin-top: -2px;
+}
+.zan-panel.top button{
+	background: #FF4A4A;
+}
+.zan-cell__text{
+	color: #FFFFFF;
+	text-align: left;
+}

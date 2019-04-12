@@ -1,0 +1,57 @@
+.labelsBox{
+	position: relative;
+	height: 100vh;
+	font-size: 26rpx;
+	background: #F5F5F5;
+}
+.labelsBox .top,
+.allLabels .labelsList{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4%;
+	box-sizing: border-box;
+}
+.labelsBox .top{
+	padding-bottom: 20rpx;
+	background: #FFFFFF;
+}
+.labelsBox .top .labelInput{
+	height: 64rpx;
+	line-height: 64rpx;
+	margin-top: 20rpx;
+}
+.cancelBtn{
+	color: #FF4A4A;
+	border: 1px solid #FF4A4A;
+}
+.title{
+	height: 84rpx;
+	line-height: 84rpx;
+	padding: 0 4%;
+	color: #999999;
+}
+.labelsBox .sureBtn{
+	bottom: 140rpx;
+}
+/* 本页面共有样式 */
+.label{
+	height: 68rpx;
+	line-height: 68rpx;
+	padding: 0 30rpx;
+	margin: 20rpx 20rpx 0 0;
+	color: #333333;
+	border: 1px solid #E0E0E0;
+	border-radius: 34rpx;
+}
+.labelActive{
+	color: #FF4A4A;
+	border: 1px solid #FF4A4A;
+}
+button{
+	position: absolute;
+	left: 4%;
+	bottom: 30rpx;
+	width: 92%;
+	font-size: 32rpx;
+	border-radius: 6rpx;
+}

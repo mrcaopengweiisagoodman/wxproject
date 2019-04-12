@@ -1,0 +1,109 @@
+ /**index.wxss**/
+/* .container{
+	background: url('https://shangban-majiang.oss-cn-hangzhou.aliyuncs.com/majiang/8911552808898230.jpg');
+	background-size: 100% 100%;
+	background-position: center center;
+} */
+.container{
+	position: relative;
+}
+.containerBg{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70%;
+}
+/* 轮播 */
+.swiper-block{
+	width: 100%;
+	height: 460rpx;
+}
+.swiper-item{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	overflow:unset;
+}
+.slide-image{
+	width: 550rpx;
+	height:320rpx;
+	border-radius: 9rpx;
+	box-shadow: 0px 0px 30rpx rgba(0, 0,0,.2); 
+	margin: 0rpx 35rpx;
+	z-index: 2;  
+}
+.active{
+	transform: scale(1.14);
+	transition:all .2s ease-in 0s;
+	z-index: 20; 
+}
+/* 学科导航 */
+.navList{
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	width: 86%;
+	padding: 0 7%;
+}
+.navList .subjectNav{
+	width: 33.3%;
+	height: 282rpx;
+}
+.navList navigator{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 0 auto;
+}
+.navList image{
+	width: 200rpx;
+	height: 280rpx;
+}
+.navList .text{
+	position: absolute;
+	left: 40rpx;
+	top: 30rpx;
+	font-size: 34rpx;
+	color: #FFFFFF;
+}
+/* 名言 */
+.motto{
+	position:relative;
+	/* width: 650rpx; */
+	width: 83%;
+	margin: 40rpx auto 40rpx;
+	line-height: 40rpx;
+	font-size: 26rpx;
+	color: #333333;
+	z-index: 2;
+}
+/* 拍照按钮 */
+.takePhotoBtn{
+	position: absolute;
+	width: 100%;
+	bottom: 30rpx;
+	text-align: center;
+}
+.takePhotoBtn image{
+	width: 166rpx;
+	height: 160rpx;
+}
+/* 客服入口 */
+.customerService{
+/* .customerService button{ */
+	position: fixed;
+	right: 30rpx;
+	bottom: 80rpx;
+}
+.customerService image,
+.customerService button{
+	width: 80rpx;
+	height: 80rpx;
+}
+.customerService button{
+	background: rgba(255,255,255,0);
+	border: none!important;	
+}

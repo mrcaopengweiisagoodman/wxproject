@@ -1,0 +1,277 @@
+<view id="imgEdit" class="imgEdit">
+	<!-- 图片展示 -->
+	<block wx:if="{{pageState == 'imageShow'}}">
+		<view class="imgShowBox">
+			<image src="{{imageSrc}}" 
+				style='width: {{imageInfo.width + "px"}};height: {{imageInfo.height + "px"}};'
+			></image>
+			<!-- <image src="{{firstImg.src}}" 
+				style='width: {{firstImg.w + "px"}};height: {{firstImg.h + "px"}};'
+			></image> -->
+		</view>
+		<view class="nextOrNo">
+			<view hidden="{{reTakeOri}}">
+				<view class="h2">还有一页？再拍一张</view>
+				<image src="../../../images/camera/photo_btn_pz.png" bindtap="backCamera"></image>
+			</view>
+			<view wx:if="{{reTakeOri}}" class="goEdit" bindtap="goEdit"  data-pageState="imageEdit">没有了，继续下一步</view>
+			<view hidden="{{reTakeOri}}" class="goEdit" bindtap="goEdit"  data-pageState="imageEdit" style="marginTop: 20rpx;">没有了，继续下一步</view>
+		</view>
+		<view wx:if="{{imageAgin}}" class="firstImg">
+			<!-- <image src="../../../images/camera/photo_icon_xiangc.png"></image> -->
+			<image src="{{firstImg.src}}" style='width: {{firstImg.w + "px"}};height: {{firstImg.h + "px"}}'></image>
+		</view>
+	</block>
+	<!-- 编辑图片 -->
+	<block wx:elif="{{pageState == 'imageEdit'}}">
+		<view id='canvasInBox'>
+			<canvas canvas-id="canvasIn"
+				style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width + "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height + "px"}};'
+				disable-scroll="false" 
+				bindtouchstart="touchStart" 
+				bindtouchend="touchEnd" 
+				bindtouchmove="touchMove"
+			></canvas>
+		</view>
+		<view class="toolBox nextOrNo">
+			<view class="h2">单指擦除错误答案笔记</view>
+			<view class="setLineLists">
+				<view>橡皮大小</view>
+				<view class="setLine" bindtap="setLineWidth" data-param="10">
+					<view class="circle {{lineWidth == 10 ? 'redBg' : ''}}" style="width: 28rpx;height: 28rpx;"></view>
+					<view>小</view>
+				</view>
+				<view class="setLine" bindtap="setLineWidth" data-param="18">
+					<view class="circle {{lineWidth == 18 ? 'redBg' : ''}}" style="width: 36rpx;height: 36rpx;"></view>
+					<view>中</view>
+				</view>
+				<view class="setLine" bindtap="setLineWidth" data-param="20">
+					<view class="circle {{lineWidth == 20 ? 'redBg' : ''}}" style="width: 40rpx;height: 40rpx;"></view>
+					<view>大</view>
+				</view>
+				<view class="backMove" bindtap="recoverCanvas">
+					<view class="backMove">撤销</view>
+				</view>
+			</view>
+			<view class="goEdit" bindtap="goEdit" data-pageState="imageSave">下一步</view>
+			
+			<!-- <button bind:tap='uploadCanvas'>保存图片</button>
+			<button bind:tap='setLineWidth' data-param='5'>细条</button>
+			<button bind:tap='setLineWidth' data-param='10'>中条</button>
+			<button bind:tap='setLineWidth' data-param='15'>粗条</button>
+			<button bind:tap='colorSelect' data-param='#22afaf'>浅蓝</button>
+			<button bind:tap='colorSelect' data-param='#da208e'>浅紫</button>
+			<button bind:tap='colorSelect' data-param='#d6da20'>橘黄</button> 
+			
+			<button bind:tap='clearCanvas'>橡皮擦</button>
+			<button bind:tap='recoverCanvas'>回退</button> -->
+		</view>
+	</block>
+	<!-- 保存图片 -->
+	<block wx:elif="{{pageState == 'imageSave'}}">
+		<view class="saveCanvas nextOrNo">
+			<image src="{{imageSrc}}" 
+				style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width + "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height + "px"}};'
+			></image>
+			<view class="rePhoto" bindtap="reCamera">重拍</view>
+			<view class="saveBtn" bindtap="goEdit" data-pageState="allImageShow">保存</view>
+		</view>
+	</block>
+	<!-- 正背面图片展示 -->
+	<block wx:elif="{{pageState == 'allImageShow'}}">
+		<swiper current="{{imageCurrent}}" class="allImageShow" bindchange="slideChange">
+			<swiper-item wx:if="{{uploadNum.f == 'file_front' && !reTakeOri}}" class="swiperItem">
+				<!-- 大图开始 -->
+				<view class="clickImgBox" wx:if="{{btnArr}}">
+					<view class="clickImg" bindtap="bigImgHide">
+						<image src="{{imageSrc}}" class="turn_{{turnCount}}"
+							style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width * 0.85 + "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height * 0.85 + "px"}};'
+						></image>
+					</view>
+					<view class="btnBox">
+						<view class="btnB_" bindtap="bigImgBack">
+							<image src="../../../images/camera/photo_icon_cp.png"></image>
+							<view class="font_">重拍</view>
+						</view>
+						<view class="btnB_" bindtap="turnImg">
+							<image src="../../../images/camera/photo_icon_xz.png"></image>
+							<view class="font_">旋转</view>
+						</view>
+						<view class="btnB_" bindtap="bigImgBack">
+							<image src="../../../images/camera/photo_icon_sc.png"></image>
+							<view class="font_">删除</view>
+						</view>
+					</view>
+				</view>
+				<!-- 大图结束 -->
+				<view class="box" bindtap="browseImg" data-src="{{imageSrc}}">
+					<cover-view class="selectSubject" bindtap="selectSubject">
+						<!-- <cover-view>数学</cover-view> -->
+						<cover-view>{{subjectText}}</cover-view>
+						<cover-image class="jiantou" src='{{jiantouImg}}'></cover-image>
+					</cover-view>
+					<!-- <view>数学</view> -->
+					<!-- <view class="rePhoto" bindtap="reCamera">重拍</view> -->
+					<image src="{{imageSrc}}" 
+						style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width * 0.85+ "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height * 0.85 + "px"}};'
+					></image>
+					 <!-- 学科选择 -->
+					<cover-view class="subjectBox" wx:if="{{subjectIsShow}}">
+						<cover-view class="subjectList {{subjectText =='数学' ? 'subjectColor' : ''}}" bindtap="choiceSubject" data-cnText="MATH" data-subjectText="数学">数学</cover-view>
+						<cover-view class="subjectList {{subjectText =='语文' ? 'subjectColor' : ''}}" bindtap="choiceSubject" data-cnText="CHINESE" data-subjectText="语文">语文</cover-view>
+						<cover-view class="subjectList {{subjectText =='英语' ? 'subjectColor' : ''}}" bindtap="choiceSubject" data-cnText="ENGLISH" data-subjectText="英语">英语</cover-view>
+					</cover-view>
+					<!-- 底部标签 -->
+					<view class="tagManage" hidden="{{subjectIsShow}}">
+						<!-- <view class="h2">背面：请上传正确答案</view> -->
+						<view class="h2">正面：题目</view>
+						<view class="subTitle tagTitle">
+							<image src="../../../images/camera/photo_icon_gdbq.png"></image>
+							<view style="margin: 0 20rpx;">更多标签</view>
+						</view>
+						<view class="tagsBox">
+							<!-- 弹出标签处理页面 -->
+							<view bindtap="adminLabels" class="tagStyle" data-direction="Back">添加/管理</view>
+							<block wx:for="{{selectLabelsBack}}" wx:key="{{item.labelId}}">
+								<view class="tagStyle">{{item.labelName}}</view>
+							</block>
+							<!-- <view class="tagStyle">语文</view>
+							<view class="tagStyle">数学</view>
+							<view class="tagStyle">英语</view> -->
+						</view>
+						<view class="subTitle beizhu">
+							<image src="../../../images/camera/photo_icon_bz.png"></image>
+							<view style="margin: 0 20rpx;">备注</view>
+							<input type="text" placeholder="点击添加备注" style="width: 80%;" bindblur="getInput" />
+						</view>
+						<!-- <view wx:if="{{saveImgBtnName.indexOf('file_back') == -1 && saveImgBtnName.length == 0}}" class="saveBtn upload" bindtap="uploadCanvas" data-imageSrc="{{imageSrc}}" data-pageState="allImageShow" data-name="file_back">保存</view> -->
+						<view class="saveBtn upload" bindtap="uploadCanvas" data-imageSrc="{{imageSrc}}" data-pageState="allImageShow" data-name="file_front">保存</view>
+					</view>
+				</view>
+			</swiper-item>
+			<swiper-item wx:if="{{uploadNum.b == 'file_back' && !reTakeOri}}" class="swiperItem">
+				<!-- 大图开始 -->
+				<view class="clickImgBox" wx:if="{{btnArr}}">
+					<view class="clickImg" bindtap="bigImgHide">
+						<image src="{{imageEditSrc ? imageEditSrc : firstImg.src}}" class="turn_{{turnCount}}"
+							style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width * 0.85 + "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height * 0.85 + "px"}};'
+						></image>
+					</view>
+					<view class="btnBox">
+						<view class="btnB_" bindtap="bigImgBack">
+							<image src="../../../images/camera/photo_icon_cp.png"></image>
+							<view class="font_">重拍</view>
+						</view>
+						<view class="btnB_" bindtap="turnImg">
+							<image src="../../../images/camera/photo_icon_xz.png"></image>
+							<view class="font_">旋转</view>
+						</view>
+						<view class="btnB_" bindtap="bigImgBack">
+							<image src="../../../images/camera/photo_icon_sc.png"></image>
+							<view class="font_">删除</view>
+						</view>
+					</view>
+				</view>
+				<!-- 大图结束 -->
+				<view class="box" bindtap="browseImg" data-src="{{imageEditSrc ? imageEditSrc : firstImg.src}}" >
+					<!-- <view>数学</view> -->
+					<view class="rePhoto" bindtap="reCamera">重拍</view>
+					<image src="{{imageEditSrc ? imageEditSrc : firstImg.src}}" 
+						style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width * 0.85 + "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height * 0.85 + "px"}};'
+					></image>
+					
+					<!-- 底部标签 -->
+					<view class="tagManage">
+						<!-- <view class="h2">正面：题目</view> -->
+						<view class="h2">背面：请上传正确答案</view>
+					<!-- 	<view class="subTitle tagTitle">
+							<image src="../../../images/camera/photo_icon_gdbq.png"></image>
+							<view style="margin: 0 20rpx;">更多标签</view>
+						</view> -->
+						<view class="tagsBox">
+							<!-- 弹出标签处理页面 -->
+							<!-- <view bindtap="adminLabels" class="tagStyle" data-direction="Face">添加/管理</view> -->
+							<!-- <view class="tagStyle">数学</view> -->
+							<block wx:for="{{selectLabelsFace}}" wx:key="{{item.labelId}}">
+								<view class="tagStyle">{{item.labelName}}</view>
+							</block>
+						</view>
+						<view class="subTitle beizhu">
+							<image src="../../../images/camera/photo_icon_bz.png"></image>
+							<view style="margin: 0 20rpx;">备注</view>
+							<input type="text" placeholder="易错题目注意多练" style="width: 80%;" bindblur="getInput" />
+						</view>
+						<!-- <view wx:if="{{saveImgBtnName.indexOf('file_front') == -1 && saveImgBtnName.length == 0}}" class="saveBtn upload" bindtap="uploadCanvas" data-imageSrc="{{imageEditSrc ? imageEditSrc : firstImg.src}}" data-pageState="allImageShow" data-name="file_front">保存</view> -->
+						<view hidden="{{uploadNum.f}}" class="saveBtn upload" bindtap="uploadCanvas" data-imageSrc="{{imageSrc}}" data-pageState="allImageShow" data-name="file_back">保存</view>
+					</view>
+				</view>
+			</swiper-item>
+			<swiper-item wx:if="{{reTakeOri}}" class="swiperItem">
+				<!-- 大图开始 -->
+				<view class="clickImgBox" wx:if="{{btnArr}}">
+					<view class="clickImg" bindtap="bigImgHide">
+						<image src="{{imageEditSrc ? imageEditSrc : firstImg.src}}" class="turn_{{turnCount}}"
+							style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width * 0.85 + "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height * 0.85 + "px"}};'
+						></image>
+					</view>
+					<view class="btnBox">
+						<view class="btnB_" bindtap="reCamera">
+							<image src="../../../images/camera/photo_icon_cp.png"></image>
+							<view class="font_">重拍</view>
+						</view>
+						<view class="btnB_" bindtap="turnImg">
+							<image src="../../../images/camera/photo_icon_xz.png"></image>
+							<view class="font_">旋转</view>
+						</view>
+						<view class="btnB_" bindtap="reCamera">
+							<image src="../../../images/camera/photo_icon_sc.png"></image>
+							<view class="font_">删除</view>
+						</view>
+					</view>
+				</view>
+				<!-- 大图结束 -->
+				<view class="box" bindtap="browseImg" data-src="{{imageEditSrc ? imageEditSrc : firstImg.src}}">
+					<!-- <view>数学</view> -->
+					<view class="rePhoto" bindtap="reCamera">重拍</view>
+					<image src="{{imageEditSrc ? imageEditSrc : firstImg.src}}" 
+						style='width: {{canvasInfo.width ? canvasInfo.width + "px" : imageInfo.width * 0.85 + "px"}};height: {{canvasInfo.height ? canvasInfo.height + "px" : imageInfo.height * 0.85 + "px"}};'
+					></image>
+					
+					<!-- 底部标签 -->
+					<view class="tagManage">
+						<!-- <view class="h2">正面：题目</view> -->
+						<view class="h2">背面：请上传正确答案</view>
+					<!-- 	<view class="subTitle tagTitle">
+							<image src="../../../images/camera/photo_icon_gdbq.png"></image>
+							<view style="margin: 0 20rpx;">更多标签</view>
+						</view> -->
+						<view class="tagsBox">
+							<!-- 弹出标签处理页面 -->
+							<!-- <view bindtap="adminLabels" class="tagStyle" data-direction="Face">添加/管理</view> -->
+							<!-- <view class="tagStyle">数学</view> -->
+							<block wx:for="{{selectLabelsFace}}" wx:key="{{item.labelId}}">
+								<view class="tagStyle">{{item.labelName}}</view>
+							</block>
+						</view>
+						<view class="subTitle beizhu">
+							<image src="../../../images/camera/photo_icon_bz.png"></image>
+							<view style="margin: 0 20rpx;">备注</view>
+							<input type="text" placeholder="易错题目注意多练" style="width: 80%;" bindblur="getInput" />
+						</view>
+						<!-- <view wx:if="{{saveImgBtnName.indexOf('file_front') == -1 && saveImgBtnName.length == 0}}" class="saveBtn upload" bindtap="uploadCanvas" data-imageSrc="{{imageEditSrc ? imageEditSrc : firstImg.src}}" data-pageState="allImageShow" data-name="file_front">保存</view> -->
+						<view class="saveBtn upload" bindtap="uploadCanvas" data-imageSrc="{{imageSrc}}" data-pageState="allImageShow" data-name="file_back">保存</view>
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
+		<!-- 左右切换按钮 -->
+		<!-- <view wx:if="{{imageCurrent == 1}}" class="switchLeft" bindtap="clickChange">
+			<image src="../../../images/camera/photo_icon_syy.png" ></image>
+			<image wx:if="{{imageCurrent}}" class="switchRight" src="../../../images/camera/photo_icon_xyy.png"></image>
+		</view>
+		<view wx:if="{{imageCurrent == 0}}" class="switchRight" bindtap="clickChange">
+			<image wx:if="{{imageCurrent}}" class="switchRight" src="../../../images/camera/photo_icon_xyy.png"></image>
+			<image src="../../../images/camera/photo_icon_xyy.png"></image>
+		</view> -->
+	</block>
+</view>

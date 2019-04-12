@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<import src="../../templates/tabbar/tabbar.wxml"></import>
+<import src="../../templates/alter_grade/alter_grade.wxml"></import>
+<view class="container">
+	<image class="containerBg" src="../../images/home/home_bg.png"></image>
+	<!-- 轮播开始 -->
+	<swiper class="swiper-block"  previous-margin="70rpx" next-margin="70rpx" current="1" bindchange="swiperChange">
+		<block wx:for="{{Images}}" wx:index="{{index}}" wx:key="">
+			<swiper-item class="swiper-item">
+				<image mode="aspectFill" src="{{item}}" class="slide-image {{swiperIndex == index ? 'active' : ''}}"/>
+			</swiper-item>
+		</block>
+	</swiper>
+	<!-- 轮播结束 -->
+	<!-- 学科导航开始 -->
+	<view class="navList">
+		<block wx:for="{{subjectNavBg}}" wx:for-item="item" wx:key="item">
+			<view class="subjectNav">
+				<navigator
+					url="/pages/subject_list/subject_list?subject={{item.subject}}"
+					hover-class="none"
+				>
+					<image src="{{item.bg}}"></image>
+					<view class="text">
+						<view>{{item.name}}</view>
+						<view>{{item.egName}}</view>
+					</view>
+				</navigator>
+			</view>
+		</block>
+	</view>
+	<!-- 学科导航结束 -->
+	<!-- 名言 -->
+	<view class="motto">
+		<!-- 可输入45个字符 -->
+		<!-- 时间就像海绵里面的水 -->
+		科学是到处为家的，不过，在任何不播种的地方，是决不会得到丰收的。 —— 赫尔岑
+	</view>
+	<!-- 拍照 -->
+	<view class="takePhotoBtn" bindtap="goTakePhoto">
+		<image src="../../images/home/{{takePhotoBtn}}.png"></image>
+	</view>
+	<!-- 客服按钮 -->
+	<view class="customerService">
+		<!-- <button open-type="contact" bindcontact="contactCallBack">
+		    <image src="../../images/home/icon_kefu.png"></image>
+        </button> -->
+        <contact-button type="default-light" session-from="weapp" bindTap="contactCallBack">
+            <image src="../../images/home/icon_kefu.png"></image>
+        </contact-button>
+	</view>
+	<!-- 底部导航 -->
+	<!-- <template is="tabBar" data="{{pathStr}}"></template> -->
+	<!-- 年级选择 -->
+	<!-- <template wx:if="{{gradeIsChoice}}" is="alterGrade" data="{{gradeData}}"></template> -->
+	<!-- <template wx:if="{{gradeIsChoice}}" is="alterGrade" data="{{gradeData,gradeStepData}}"></template> -->
+	
+</view>

@@ -1,0 +1,18 @@
+<view class="labelsBox">
+	<view class="top">
+		<block wx:for="{{selectLabels}}" wx:key="{{item.labelId}}">
+			<view class="label labelActive" bindtap="deleteLabel" data-param="{{item}}">{{item.labelName}}</view>
+		</block>
+		<input class="labelInput" type="text" placeholder="输入标签" value="{{inputVal}}" maxlength="14" bindblur="diyLabels" />
+	</view>
+	<view class="allLabels">
+		<view class="title">所有标签</view>
+		<view class="labelsList">
+			<block wx:for="{{allLabels}}" wx:key="{{item.labelId}}">
+				<view class="label {{labelActive == item.labelName ? 'labelActive' : ''}}" bindtap="setLabel" data-param="{{item}}">{{item.labelName}}</view>
+			</block>
+		</view>
+	</view>
+	<button class="sureBtn" type="warn" bindtap="labelSubmit">确定</button>
+	<button class="cancelBtn" bindtap="backImgEdit">取消</button>
+</view>

@@ -1,0 +1,24 @@
+<template name="tabBar">
+	<view class="tabbarBox">
+        <block wx:if="{{pathStr === 'mine'}}">
+            <view class="homeTab" data-pathStr="index" bindtap="tabChange">
+                <image src="../../images/icons/home.png"></image>
+                <text class="defaultColor">首页</text>
+            </view>
+            <view class="mineTab" data-pathStr="mine" bindtap="tabChange">
+                <image src="../../images/icons/mine_selected.png"></image>
+                <text class="activeColor">我的</text>
+            </view>
+        </block>
+        <block wx:elif="{{pathStr === 'index'}}">
+            <view class="homeTab" data-pathStr="index" bindtap="tabChange">
+                <image src="../../images/icons/home_selected.png"></image>
+                <text class="activeColor">首页</text>
+            </view>
+            <view class="mineTab" data-pathStr="mine" bindtap="tabChange">
+                <image src="../../images/icons/mine.png"></image>
+                <text class="defaultColor">我的</text>
+            </view>
+        </block>
+	</view>
+</template>
